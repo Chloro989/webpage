@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<style type="text/css">
+    body {background-color: #f4e7d3;}
+</style>
+
+<form action='' method="POST">{% csrf_token %}
+{{form.as_p}}
+    <input type="submit" value='更新します'>
+</form>
+{% endblock content %}

@@ -1,0 +1,30 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>トップページ</title>
+</head>
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<div class="top">
+<h1>chloro's top page<h1>
+    <a href="{% url 'list' %}">comments here<a><br>
+        <a href="{% url 'apex_data' %}">apex data</a>
+
+<style type="text/css">
+            body {background-color: #f4e7d3;}
+            .top{text-align: center;  font-weight: bold; color: #1a0611; font-family: 'Sacramento', cursive;}
+</style>
+
+</div>
+
+
+
+{% endblock content %}

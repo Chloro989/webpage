@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron" style="background:url(https://stat.blogskin.ameba.jp/blogskin_images/20211220/13/2e/20/p/o11200400otani41041639976237663.png); background-size:cover;"
+>
+    
+    <div class="container">
+
+      <h1>Comments</h1>
+      <a href="{% url 'top' %}">Top Page</a>
+    </div>
+
+</div> 
+<style>
+body {background-color: #f4e7d3;}
+            /*p {font-size: 20px; color: #484237;}
+            h1 {font-size: 20px; font-weight: bold; color: #484237;}
+            p {text-align: center}
+            h1 {text-align: center} */
+.jumbotron {text-align: center;  font-weight: bold; color: #fdfbf7; font-family: 'Sacramento', cursive;}
+
+</style>  
+
+{% endblock header%}
+
+{% block content %}
+    <div class = 'container'>
+<a href="{% url 'create' %}" class="btn btn-info" style="display: block; margin:auto; width:16rem">Write Your Comment</a>
+    {% for item in object_list %}
+    <div class="card"> 
+     <h5 class="card-header">{{item.category}}</h5>
+     <div class="card-body">
+       <h5 class="card-title">{{item.title}}</h5>
+       <h6 class="card-title">{{item.postdate}}</h6>
+       <a href="{% url 'detail' item.pk %}" class="btn btn-primary"> 詳細へ</a>
+      </div>
+     </div>
+    {% endfor %}
+    </div>
+{% endblock content%}
